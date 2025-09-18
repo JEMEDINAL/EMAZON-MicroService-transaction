@@ -1,33 +1,50 @@
 package com.emazon.microservice_transaction.domain.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Sales {
-    private LocalDate deliveryDate;
-    private Article article;
-    private int stock;
-    private String note;
+    private LocalDate saleDate;
+    private int quantity;
+    private String article;
+    private BigDecimal unitPrice;
 
-    public Sales(LocalDate deliveryDate, Article article, int stock, String note) {
-        this.deliveryDate = deliveryDate;
+    public Sales(LocalDate saleDate, int quantity, String article, BigDecimal unitPrice) {
+        this.saleDate = saleDate;
+        this.quantity = quantity;
         this.article = article;
-        this.stock = stock;
-        this.note = note;
+        this.unitPrice = unitPrice;
     }
 
-    public String getNote() {
-        return note;
+    public LocalDate getSaleDate() {
+        return saleDate;
     }
 
-    public int getStock() {
-        return stock;
+    public void setSaleDate(LocalDate saleDate) {
+        this.saleDate = saleDate;
     }
 
-    public Article getArticle() {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getArticle() {
         return article;
     }
 
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
+    public void setArticle(String article) {
+        this.article = article;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
     }
 }
